@@ -48,6 +48,8 @@
   },
   "license": "GPL-3.0",
   "dependencies": {
-    "acorn": "^3.0.4"
+    "acorn": "^3.0.4",
+    "escope": "^3.6.0",
+    "lodash": "^4.6.1"
   }
 }
