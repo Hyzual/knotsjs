@@ -1,0 +1,22 @@
+{
+  "name": "knots-web",
+  "version": "1.0.0",
+  "description": "d3 frontend for Knots",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --progress --colors --hot"
+  },
+  "author": "Hyzual <hyzual@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "d3": "^3.5.16"
+  },
+  "devDependencies": {
+    "css-loader": "^0.23.1",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
