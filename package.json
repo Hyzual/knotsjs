@@ -8,10 +8,7 @@
     "email": "hyzual@gmail.com",
     "url": ""
   },
-  "files": [
-    "dist"
-  ],
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "keywords": [
     "dependencies",
     "graph"
