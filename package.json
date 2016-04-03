@@ -1,6 +1,6 @@
 {
   "name": "knotsjs",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "See the dependencies in your code as a graph and use it to make your code more maintainable",
   "homepage": "",
   "author": {
@@ -47,6 +47,7 @@
   "dependencies": {
     "acorn": "^3.0.4",
     "escope": "^3.6.0",
-    "lodash": "^4.6.1"
+    "lodash": "^4.6.1",
+    "yargs": "^4.3.2"
   }
 }
