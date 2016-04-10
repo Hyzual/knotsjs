@@ -15,7 +15,8 @@
   ],
   "devDependencies": {
     "istanbul": "^0.4.3",
-    "jasmine": "^2.4.1"
+    "jasmine": "^2.4.1",
+    "jsgraph": "^0.6.1"
   },
   "repository": "Hyzual/knotsjs",
   "scripts": {
