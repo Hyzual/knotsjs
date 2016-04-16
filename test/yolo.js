@@ -1,3 +1,20 @@
+function level_three() {
+  level_two();
+  another_level_two();
+}
+
+function level_two() {
+  level_one();
+}
+
+function another_level_two() {
+  level_one();
+}
+
+function level_one() {
+
+}
+
 function zbra() {
   a();
 }
@@ -10,3 +27,15 @@ var obj = {
     c();
   }
 };
+
+function circular_one() {
+  circular_two();
+}
+
+function circular_two() {
+  circular_three();
+}
+
+function circular_three() {
+  circular_one();
+}
