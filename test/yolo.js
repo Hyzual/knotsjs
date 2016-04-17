@@ -28,6 +28,18 @@ var obj = {
   }
 };
 
+function one() {
+  two();
+}
+
+function other_one() {
+  two();
+}
+
+function two() {
+  one();
+}
+
 function recursive() {
   recursive();
 }
