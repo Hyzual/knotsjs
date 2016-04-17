@@ -1,17 +1,17 @@
-function level_three() {
+function level_one() {
   level_two();
   another_level_two();
 }
 
 function level_two() {
-  level_one();
+  level_three();
 }
 
 function another_level_two() {
-  level_one();
+  level_three();
 }
 
-function level_one() {
+function level_three() {
 
 }
 
@@ -27,6 +27,10 @@ var obj = {
     c();
   }
 };
+
+function recursive() {
+  recursive();
+}
 
 function circular_one() {
   circular_two();
