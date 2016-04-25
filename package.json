@@ -26,8 +26,10 @@
   "license": "GPL-3.0",
   "dependencies": {
     "acorn": "^3.0.4",
+    "bluebird": "^3.3.5",
     "escope": "^3.6.0",
     "lodash": "^4.6.1",
+    "mz": "^2.4.0",
     "yargs": "^4.3.2"
   }
 }
