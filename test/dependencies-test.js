@@ -3,7 +3,7 @@ describe("dependencies -", function() {
 
   beforeEach(function() {
     dependencies = require('../lib/dependencies.js');
-    dependencies.clear(function() {});
+    dependencies.clear();
   });
 
   describe("Given a caller and a callee", function() {
