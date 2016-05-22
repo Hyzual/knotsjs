@@ -41,6 +41,7 @@ function two() {
 }
 
 function recursive() {
+  level_three();
   recursive();
 }
 
@@ -54,4 +55,38 @@ function circular_two() {
 
 function circular_three() {
   circular_one();
+}
+
+var other_obj = {
+  reference: referenced_function
+};
+
+function referenced_function(some_value) {
+  _(some_value)
+    .map(function (value) {
+      return value * 2;
+    })
+    .reduce(function (sum, value) {
+      return sum + value;
+    }, 0)
+    .value();
+}
+
+function angularService($http) {
+  var self = this;
+  _.extend(self, {
+    getGenres: getGenres,
+    subsonicRequest: subsonicRequest
+  });
+
+  function getGenres() {
+    self.subsonicRequest();
+  }
+
+  function subsonicRequest() {
+  }
+}
+
+function does_not_depend_and_is_not_depended_upon(b) {
+  return b * 2;
 }
