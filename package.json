@@ -15,8 +15,7 @@
   ],
   "devDependencies": {
     "istanbul": "^0.4.3",
-    "jasmine": "^2.4.1",
-    "jsgraph": "^0.6.1"
+    "jasmine": "^2.4.1"
   },
   "repository": "Hyzual/knotsjs",
   "scripts": {
@@ -28,6 +27,7 @@
     "acorn": "^3.0.4",
     "bluebird": "^3.3.5",
     "escope": "^3.6.0",
+    "jsgraph": "^0.6.1",
     "lodash": "^4.6.1",
     "mz": "^2.4.0",
     "recursive-readdir": "^2.0.0",
