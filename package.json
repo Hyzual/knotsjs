@@ -30,6 +30,7 @@
     "escope": "^3.6.0",
     "lodash": "^4.6.1",
     "mz": "^2.4.0",
+    "recursive-readdir": "^2.0.0",
     "yargs": "^4.3.2"
   }
 }
