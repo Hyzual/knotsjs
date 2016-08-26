@@ -1,9 +1,9 @@
 # knotsjs
 > Untie the knots in your source code ⛓
 
-[![NPM version][npm-image]][npm-url]
+[![NPM version][npm-image]][npm-url] [![Dependency Status](https://www.versioneye.com/user/projects/57c0af6e939fc6004abe4504/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/57c0af6e939fc6004abe4504)
 
-Have you ever found yourself staring at a file someone else had written, wondering where it all starts ? You pick a place at random and look for a function that's calling it, and slowly, you painstakingly retrace the path the code takes. What if you had a map 🗺 to follow that path ?
+Have you ever found yourself staring at a file someone else had written, wondering where it all starts ? You pick a place at random and look for a function that's calling it, and slowly you painstakingly retrace the path the code takes. What if you had a map 🗺 to follow that path ?
 
 ## What knotsjs does
 
@@ -15,7 +15,7 @@ knotsjs is meant to be used with other programs to display the graph of function
 
 [![Screenshot from knots-electron][knots-electron-screenshot]][knots-electron]
 
-Of course feel free to use it in your own program ! See the [Usage section][#usage] below.
+Of course feel free to use it in your own program ! See the [Usage section](#usage) below.
 
 ## Installation
 
@@ -23,7 +23,6 @@ Of course feel free to use it in your own program ! See the [Usage section][#usa
 $ npm install --save knotsjs
 ```
 
-<a id="usage"></a>
 ## Usage
 
 ```js
@@ -34,7 +33,12 @@ knots.parse(file_path).then(function (dependencies) {
   console.log(dependencies);
 });
 
-// Parse all .js files recursively in a directory
+// Parse multiple files
+knots.parseFiles(file_paths).then(function (dependencies) {
+  console.log(dependencies);
+});
+
+// Parse all .js files in a directory and all its subdirectories
 knots.parseDirectory(directory_path).then(function (dependencies) {
   console.log(dependencies);
 });
@@ -45,14 +49,28 @@ knots.parseDirectory(directory_path).then(function (dependencies) {
 
 ```js
 {
-  directed_graph: DirectedGraph // A DirectedGraph created by jsgraph. Allows you to make queries and walk the graph
+  /**
+   * A DirectedGraph created by jsgraph.
+   * Allows you to make queries and walk the graph
+   */
+  directed_graph: DirectedGraph
   edges: Array, // An array of jsgraph edges
-  ordered_vertices: { // An object representing vertices (functions) ordered from functions least depended upon (functions not called by anything) at level 0 to functions most depended upon (functions called by many other functions) at the highest level. It is used by knots-electron to dislay the visual representation.
+  /**
+   * An object representing vertices (functions) ordered from functions least
+   * depended upon (functions not called by anything) at level 0 to functions
+   * most depended upon (functions called by many other functions) at the
+   * highest level. It is used by knots-electron to dislay the visual representation.
+   */
+  ordered_vertices: {
     0: Array,
     1: Array,
     ...
   },
-  vertices: Object // A map of all the jsgraph vertices (functions) found in the parsed source code. The key is the function's name.
+  /**
+   * A map of all the jsgraph vertices (functions) found in the parsed source
+   * code. The key is the function's name.
+   */
+  vertices: Object
 }
 ```
 
@@ -100,7 +118,7 @@ After running knotsjs, you will have:
         v: "bar" // u and v are built-in jsgraph
       },
       p: {
-        type: null // This is used for reverse edges: circular dependencies
+        type: null // This becomes "reverse" for reverse edges present in circular dependencies.
       }
     }
   ]
@@ -126,7 +144,7 @@ After running knotsjs, you will have:
       name: "baz", // name is added by knotsjs to make it easier to use
       p: {
         max_dependency_depth: 0, // baz calls nothing
-        max_dependent_depth: 2, // bar is called by bar which is itself called by foo
+        max_dependent_depth: 2, // bar is called by baz which is itself called by foo
         sum_transitive_dependencies: 0,
         sum_transitive_dependents: 2
       },
@@ -192,7 +210,7 @@ GPL v3 © Joris "Hyzual" MASSON
 [d3js]: https://d3js.org
 [jsgraph-doc]: https://github.com/Encapsule/jsgraph/blob/master/docs/object-DirectedGraph.md
 [jsgraph]: https://www.npmjs.com/package/jsgraph
-[knots-electron]: https://github.com/Hyzual/knotsjs
+[knots-electron]: https://github.com/Hyzual/knots-electron
 [npm-image]: https://badge.fury.io/js/knotsjs.svg
 [npm-url]: https://npmjs.org/package/knotsjs
 [spoiklin]: http://edmundkirwan.com/general/spoiklin.html
