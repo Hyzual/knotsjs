@@ -1,28 +1,28 @@
 {
   "name": "knotsjs",
   "version": "1.0.0",
-  "description": "See the dependencies in your code as a graph and use it to make your code more maintainable",
+  "description": "Untie the knots in your source code",
+  "license": "GPL-3.0",
   "homepage": "",
-  "author": {
-    "name": "Hyzual",
-    "email": "hyzual@gmail.com",
-    "url": ""
-  },
-  "main": "lib/index.js",
   "keywords": [
     "dependencies",
     "graph"
   ],
-  "devDependencies": {
-    "istanbul": "^0.4.3",
-    "jasmine": "^2.4.1"
+  "author": {
+    "name": "Joris MASSON",
+    "email": "hyzual@gmail.com"
   },
-  "repository": "Hyzual/knotsjs",
-  "scripts": {
-    "test": "jasmine test/**/*-test.js",
-    "coverage": "istanbul cover test/**/*-test.js && istanbul report"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Hyzual/knotsjs.git"
   },
-  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Hyzual/knotsjs/issues"
+  },
+  "engines": {
+    "node": ">=0.10"
+  },
+  "main": "lib/index.js",
   "dependencies": {
     "acorn": "^3.0.4",
     "bluebird": "^3.3.5",
@@ -32,5 +32,13 @@
     "mz": "^2.4.0",
     "recursive-readdir": "^2.0.0",
     "yargs": "^4.3.2"
+  },
+  "devDependencies": {
+    "istanbul": "^0.4.3",
+    "jasmine": "^2.4.1"
+  },
+  "scripts": {
+    "test": "jasmine test/**/*-test.js",
+    "coverage": "istanbul cover test/**/*-test.js && istanbul report"
   }
 }
